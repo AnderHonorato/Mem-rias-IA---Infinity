@@ -20,6 +20,10 @@ Uma mesma interação pode aparecer no histórico e também em uma ou mais categ
 
 No início de cada interação, consultar o README raiz, este README, `INDEX.md` e somente os arquivos temáticos necessários. Ao final de cada interação, registrar obrigatoriamente a ocorrência no histórico antes de encerrar a resposta.
 
+## Habilidades compartilhadas
+
+Quando a tarefa puder se beneficiar de uma habilidade especializada, consultar `../Habilidades/README.md` e `../Habilidades/INDEX.md`, ler somente a habilidade necessária e confirmar que ela está disponível no ambiente atual. As fichas de catálogo orientam descoberta; não substituem o pacote oficial instalado nem concedem ferramentas ou permissões.
+
 ## Segurança
 
 Nunca registrar senhas, tokens, cookies, chaves privadas, códigos de recuperação ou outros segredos. Se uma interação contiver segredo, registrar apenas que houve conteúdo sensível omitido, sem copiar o segredo.

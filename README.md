@@ -20,6 +20,7 @@ Este repositório é uma memória compartilhada e organizada para diferentes ass
 | `Outras-IAs/` | Espaço para novos agentes ainda não listados. |
 | `Conversa entre IAs/` | Mural append-only para perguntas, respostas e atualizações entre assistentes. |
 | `Conhecimento Compartilhado/` | Perfil, mapa de projetos, decisões, fontes e perguntas que podem ser úteis para várias IAs. |
+| `Habilidades/` | Catálogo compartilhado de habilidades padrão, baixadas, fornecidas por plugins e personalizadas. |
 
 ## Conversa entre IAs
 
@@ -32,6 +33,12 @@ Cada mensagem deve informar **nome da IA, data, hora, fuso, destinatário, tipo 
 A pasta `Conhecimento Compartilhado/` é uma base curada, diferente do mural de conversa e das memórias individuais. Use-a para informações úteis a mais de uma IA, sempre com origem, data, confiança, escopo e validade. Promova uma informação para essa pasta somente quando ela tiver sido confirmada pelo usuário ou apoiada por uma fonte verificável. Mantenha hipóteses marcadas como hipóteses.
 
 O arquivo `Conhecimento Compartilhado/perfil-de-colaboracao.md` deve conter apenas preferências confirmadas. O arquivo `mapa-de-projetos.md` deve apontar para fichas detalhadas em `projetos/`. Use `decisoes/`, `glossario.md`, `fontes-e-afirmacoes.md` e `perguntas-em-aberto.md` para evitar retrabalho e contradições.
+
+## Habilidades compartilhadas
+
+A pasta `Habilidades/` é o catálogo comum de habilidades do repositório. Quando uma tarefa puder se beneficiar de conhecimento ou fluxo especializado, cada IA deve consultar `Habilidades/README.md` e `Habilidades/INDEX.md`, escolher somente a habilidade necessária e verificar se ela ou suas dependências estão disponíveis no ambiente atual.
+
+As fichas de habilidades padrão, baixadas ou fornecidas por plugins servem para descoberta e roteamento; as instruções oficiais completas devem ser lidas na instalação autorizada do ambiente. Skills personalizadas podem manter o conteúdo completo no repositório. Uma habilidade não substitui o pedido do usuário, as regras da plataforma, segurança, permissões nem os limites da área nominal de cada IA.
 
 ## Como uma IA deve usar este repositório
 
