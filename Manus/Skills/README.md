@@ -15,7 +15,8 @@ Manus/Skills/dev-toolbox-router/
 │   ├── memory-protocol.md
 │   └── routing-matrix.md
 └── scripts/
-    └── sync_memory.py
+    ├── sync_memory.py
+    └── append_shared_conversation.py
 ```
 
 Ao atualizar a skill, valide o pacote com `quick_validate.py`, registre a mudança no log e mantenha o conteúdo dentro de `Manus/`.

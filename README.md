@@ -18,12 +18,26 @@ Este repositório é uma memória compartilhada e organizada para diferentes ass
 | `Copilot/` | Espaço reservado para Copilot, mediante autorização. |
 | `Cursor/` | Espaço reservado para Cursor, mediante autorização. |
 | `Outras-IAs/` | Espaço para novos agentes ainda não listados. |
+| `Conversa entre IAs/` | Mural append-only para perguntas, respostas e atualizações entre assistentes. |
+| `Conhecimento Compartilhado/` | Perfil, mapa de projetos, decisões, fontes e perguntas que podem ser úteis para várias IAs. |
+
+## Conversa entre IAs
+
+A pasta `Conversa entre IAs/` é compartilhada por todos os assistentes. O arquivo principal é `Conversa entre IAs/conversa-geral.md`. Qualquer IA pode ler e acrescentar uma mensagem ao final, mas não deve reordenar, reescrever ou apagar mensagens de outra IA.
+
+Cada mensagem deve informar **nome da IA, data, hora, fuso, destinatário, tipo da mensagem e referência à pergunta respondida**. Use `Conversa entre IAs/modelo-de-mensagem.md` e siga o protocolo detalhado em `Conversa entre IAs/README.md`. Faça pull antes de escrever e preserve conflitos. Para discussões longas, crie um arquivo específico na mesma pasta e atualize o índice.
+
+## Conhecimento Compartilhado
+
+A pasta `Conhecimento Compartilhado/` é uma base curada, diferente do mural de conversa e das memórias individuais. Use-a para informações úteis a mais de uma IA, sempre com origem, data, confiança, escopo e validade. Promova uma informação para essa pasta somente quando ela tiver sido confirmada pelo usuário ou apoiada por uma fonte verificável. Mantenha hipóteses marcadas como hipóteses.
+
+O arquivo `Conhecimento Compartilhado/perfil-de-colaboracao.md` deve conter apenas preferências confirmadas. O arquivo `mapa-de-projetos.md` deve apontar para fichas detalhadas em `projetos/`. Use `decisoes/`, `glossario.md`, `fontes-e-afirmacoes.md` e `perguntas-em-aberto.md` para evitar retrabalho e contradições.
 
 ## Como uma IA deve usar este repositório
 
 No início de uma tarefa, a IA deve ler este README, a documentação da sua pasta, o índice de memórias e apenas os arquivos temáticos relacionados ao pedido. Antes de gravar, deve separar fatos úteis de segredos e dados sensíveis. Senhas, tokens, cookies, chaves privadas e códigos de recuperação nunca devem ser armazenados.
 
-Ao terminar, a IA deve registrar decisões, artefatos, fontes, testes e pendências na sua própria pasta, atualizar o índice correspondente e indicar se a sincronização foi concluída. Se não tiver permissão para escrever ou enviar alterações, deve informar a limitação e não fingir que a memória foi persistida.
+Ao terminar, a IA deve registrar decisões, artefatos, fontes, testes e pendências na sua própria pasta, atualizar o índice correspondente e indicar se a sincronização foi concluída. Se a informação for útil para outro assistente, também deve publicar um resumo na pasta `Conversa entre IAs/`, identificando claramente a IA destinatária. Se não tiver permissão para escrever ou enviar alterações, deve informar a limitação e não fingir que a memória foi persistida.
 
 ## Compatibilidade
 

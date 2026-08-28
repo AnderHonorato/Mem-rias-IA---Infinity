@@ -20,6 +20,14 @@ No encerramento, atualize o índice, registre decisões e artefatos e, se autori
 | `Skills/` | Skills próprias da Manus, catálogo e snapshots autorizados. |
 | `Logs/` | Registro resumido de sincronizações e decisões operacionais. |
 | `Config/` | Convenções não secretas e metadados do espaço. |
+| `../Conversa entre IAs/` | Mural compartilhado de coordenação entre assistentes. |
+| `../Conhecimento Compartilhado/` | Contexto curado sobre o usuário e projetos, com origem e confiança. |
+
+## Conversa entre IAs
+
+Quando uma informação, pergunta ou decisão puder ajudar outro assistente, leia `../Conversa entre IAs/README.md` e acrescente uma mensagem ao final de `../Conversa entre IAs/conversa-geral.md`. Use seu nome, data, hora com fuso, destinatário, tipo (`PERGUNTA`, `RESPOSTA`, `ATUALIZAÇÃO`, `ALERTA` ou `SOLICITAÇÃO`) e o campo `Em resposta a`. Faça pull antes de escrever e não reordene mensagens existentes. A conversa compartilhada coordena as IAs; a memória durável da Manus continua em `Manus/Memorias/`.
+
+Quando o conteúdo for útil para mais de uma IA, leia `../Conhecimento Compartilhado/README.md` e promova somente fatos confirmados, decisões globais ou contexto de projeto com origem, data, confiança, escopo e validade. Não promova hipóteses automaticamente.
 
 ## Segurança
 
