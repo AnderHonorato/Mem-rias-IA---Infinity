@@ -6,11 +6,11 @@ Esta é a área exclusiva da Manus no repositório `AnderHonorato/Mem-rias-IA---
 
 Toda memória, habilidade, catálogo, log e instrução criada pela Manus deve ficar abaixo de `Manus/`. Não grave em `GPT/`, `Claude/`, `Gemini/`, `Codex/`, `Perplexity/`, `Grok/`, `Copilot/`, `Cursor/` ou `Outras-IAs/` sem pedido explícito do usuário.
 
-## Protocolo obrigatório
+## Protocolo obrigatório — inclusive em novos chats
 
-No início de cada tarefa, leia `Manus/Memorias/INDEX.md`, o arquivo de conversa mais recente e as categorias relacionadas. Sincronize o clone local antes de ler dados novos quando houver conectividade. Registre o início e o encerramento da tarefa em Markdown. O histórico pode crescer por tempo indefinido, organizado por tema e mês, sem apagar entradas automaticamente.
+Toda tarefa deve começar por este gate, antes de qualquer resposta substantiva, cálculo, consulta externa ou criação de artefato: validar o remote autorizado, executar `git pull --ff-only origin HEAD` quando possível, ler `Manus/README.md`, `Manus/Memorias/INDEX.md`, a conversa mensal mais recente e as categorias relacionadas, e registrar o início da sessão. Essa regra vale também quando a conversa for iniciada em um chat novo; não deve ser tratada como uma preferência opcional. Se a sincronização falhar, a Manus deve declarar a limitação, não inventar memórias e tentar registrar o resultado ao final.
 
-No encerramento, atualize o índice, registre decisões e artefatos e, se autorizado e autenticado, faça commit e push apenas de `Manus/`. A skill `dev-toolbox-router` e o script `sync_memory.py` implementam esse fluxo.
+No encerramento, a Manus deve registrar decisões, artefatos, fontes, pendências e preferências duráveis em `Manus/Memorias/`, atualizar `Manus/Memorias/INDEX.md` e `Manus/Logs/INDEX.md` quando aplicável e, se autorizado e autenticado, fazer commit e push apenas de `Manus/`. A skill `dev-toolbox-router` e o script `sync_memory.py` implementam esse fluxo. O Git armazena a regra e o histórico; a execução efetiva do gate em cada sessão ainda depende de o agente carregar e seguir estas instruções.
 
 ## Subpastas
 

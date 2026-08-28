@@ -7,13 +7,11 @@ description: "Roteia tarefas de programação, design, full stack, bancos de dad
 
 Use esta skill como ponto de entrada para tarefas técnicas. Classifique a solicitação, consulte a memória compartilhada, selecione somente as habilidades necessárias e registre o contexto útil ao final.
 
-## Regra de memória — gate obrigatório, executar primeiro e por último
+## Regra de memória — executar primeiro e por último
 
-Esta é uma regra operacional obrigatória, não uma sugestão. Em toda tarefa técnica, e especialmente ao abrir um novo chat, trate a sessão como nova: antes de produzir qualquer resposta substantiva, leia `Manus/README.md`, `Manus/Memorias/INDEX.md`, o arquivo mensal mais recente em `Manus/Memorias/conversas/`, as categorias relacionadas, `Manus/Skills/catalog.md` quando necessário e o contexto compartilhado relevante. Nunca presuma que uma conversa anterior já foi sincronizada.
+No início de cada tarefa, leia `Manus/README.md`, `Manus/Memorias/INDEX.md`, o arquivo mensal mais recente em `Manus/Memorias/conversas/` e as categorias relacionadas ao pedido. Leia também `Manus/Skills/catalog.md` quando precisar escolher uma skill externa. Nunca procure ou grave memórias fora do repositório `AnderHonorato/Mem-rias-IA---Infinity` e nunca grave arquivos da Manus fora de `Manus/`.
 
-Antes da primeira resposta substantiva ou de qualquer ação que produza artefato, execute o gate de sessão: faça `git pull --ff-only`, valide o remote autorizado e registre um início usando `scripts/sync_memory.py --pull --push`. Se o gate falhar, informe imediatamente que a memória não foi sincronizada; não invente o conteúdo ausente, não trate a memória local como atualizada e tente novamente no encerramento. A sincronização é pré-condição para continuar sempre que o repositório e a autenticação estiverem disponíveis. Ao encerrar, registre o resultado e atualize os índices. “Infinita” significa não impor limite artificial de histórico, sem ignorar limites reais de armazenamento, permissões ou tamanho do Git.
-
-Se o ambiente não invocar esta skill automaticamente, a instrução permanente do projeto deve invocar `dev-toolbox-router` no início de cada sessão. Uma skill não consegue autoexecutar antes de ser chamada; essa limitação deve ser declarada, nunca usada para transformar o gate em opcional.
+Antes da primeira resposta substantiva, sincronize o repositório e registre um início de sessão usando `scripts/sync_memory.py`. Se a sincronização falhar, informe a limitação, continue sem inventar memórias e tente registrar o resultado ao final. A memória deve ser persistente e expansível por arquivos Markdown temáticos; “infinita” significa não impor um limite artificial de histórico, não significa ignorar limites de armazenamento, permissões ou tamanho do Git.
 
 Ao concluir a tarefa, registre em Markdown, dentro de `Manus/Memorias/`, o resumo do que foi decidido, artefatos criados, preferências duráveis, fontes utilizadas e pendências. Atualize `Manus/Memorias/INDEX.md` e `Manus/Logs/INDEX.md` quando aplicável. Salve habilidades e catálogos somente em `Manus/Skills/`. Nunca salve senhas, tokens, chaves privadas, cookies, códigos de recuperação ou credenciais; registre apenas que uma credencial foi necessária, sem seu valor. Não copie automaticamente dados pessoais sensíveis quando eles não forem necessários para a continuidade da tarefa.
 
@@ -36,8 +34,6 @@ Consulte [memory-protocol.md](references/memory-protocol.md) para o formato de s
 | Banco e dados | SQL, schema, migração, exploração, CSV, análise | `postgres`, `database-lookup`, `exploratory-data-analysis` | skill de análise/validação e modo somente leitura por padrão |
 | Segurança | vulnerabilidade, threat hunting, fuzzing, forense, auditoria | `security-audit`, `ffuf-skill`, `computer-forensics` | relatório com escopo, evidência, impacto e correção; sem exploração não autorizada |
 | Jogos | engine, gameplay, protótipo, level design, assets, playtest | roteador de `awesome-gamedev-agent-skills` ou `Claude-Code-Game-Studios` | `prototype-fast`, `smoke-check`, `security-audit` quando houver rede/saves |
-| Documentos e PDF | relatório, currículo, Typst, PDF estruturado, layout preciso | `typst-pdf-maker` | preflight, compilação estrita e verificação determinística |
-| API e automação Manus | API v2, tarefas, projetos, arquivos, webhooks, sites ou OAuth | `manus-api` | documentação do endpoint, autenticação e idempotência |
 
 ## Regras por domínio
 

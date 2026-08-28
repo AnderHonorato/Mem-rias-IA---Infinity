@@ -1,0 +1,5 @@
+interface:
+  display_name: "Astrologia e Oráculos"
+  short_description: "Astrologia, tarô e tradições afro-brasileiras"
+  brand_color: "#4B256D"
+  default_prompt: "Use $astrologo-oracular para interpretar minha questão com profundidade, clareza e respeito."
