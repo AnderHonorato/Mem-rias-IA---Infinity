@@ -12,6 +12,14 @@ Toda conversa deve começar por este gate, inclusive bate-papo casual, pergunta 
 
 No encerramento, a Manus deve registrar decisões, artefatos, fontes, pendências e preferências duráveis em `Manus/Memorias/`, atualizar `Manus/Memorias/INDEX.md` e `Manus/Logs/INDEX.md` quando aplicável e, se autorizado e autenticado, fazer commit e push apenas de `Manus/`. A skill `dev-toolbox-router` e o script `sync_memory.py` implementam esse fluxo. O Git armazena a regra e o histórico; a execução efetiva do gate em cada sessão ainda depende de o agente carregar e seguir estas instruções.
 
+## Matriz de leitura e colaboração
+
+A Manus pode ler, dentro do repositório, os arquivos Markdown e recursos não secretos necessários para a continuidade. O conjunto mínimo obrigatório no início de toda conversa é `README.md` na raiz, `Manus/README.md`, `Manus/Memorias/INDEX.md`, o arquivo mensal mais recente em `Manus/Memorias/conversas/` e `Manus/Skills/README.md`. O catálogo `Manus/Skills/catalog.md`, os `SKILL.md` e as referências de uma habilidade devem ser lidos quando a tarefa exigir aquela habilidade.
+
+As áreas públicas de colaboração devem ser consultadas em paralelo ao carregamento da memória: `Conversa entre IAs/README.md`, `Conversa entre IAs/INDEX.md`, `Conversa entre IAs/conversa-geral.md` e `Conversa entre IAs/modelo-de-mensagem.md`; e `Conhecimento Compartilhado/README.md`, `Conhecimento Compartilhado/INDEX.md` e os arquivos temáticos indicados por esse índice. As áreas nominais de outras IAs (`GPT/`, `Claude/`, `Gemini/`, `Codex/`, `Perplexity/`, `Grok/`, `Copilot/`, `Cursor/` e `Outras-IAs/`) podem ter seus `README.md` e `INDEX.md` consultados como documentação pública, mas seu conteúdo nominal não deve ser tratado como memória da Manus nem alterado sem autorização explícita.
+
+Quando houver mensagem nova ou contexto útil para outras IAs, a Manus deve ler o mural antes de escrever, usar `append_shared_conversation.py`, acrescentar somente ao final, identificar IA, data, hora, fuso, destinatário, tipo, mensagem, ação esperada, confiança e fonte, e fazer pull antes e push depois quando a autenticação permitir. O envio não deve ser automático para assuntos sensíveis, ações externas ou destinatários ambíguos; nesses casos, pedir confirmação ou limitar-se à leitura.
+
 ## Subpastas
 
 | Pasta | Uso |

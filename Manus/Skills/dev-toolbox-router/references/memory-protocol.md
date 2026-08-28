@@ -9,10 +9,11 @@ A pasta `Manus/` deve conter as instruções, catálogos, habilidades e memória
 ## Protocolo de início
 
 1. Executar `git pull --ff-only origin HEAD` quando houver remote autenticado e a operação for permitida.
-2. Ler `Manus/README.md` e `Manus/Memorias/INDEX.md`.
-3. Ler o arquivo mensal mais recente em `Manus/Memorias/conversas/`.
-4. Ler somente as categorias relacionadas ao pedido: `preferencias`, `projetos`, `decisoes`, `contexto`, `aprendizados`, `tarefas` ou `seguranca`.
-5. Registrar um resumo mínimo do início, sem incluir segredos ou dados sensíveis desnecessários.
+2. Em toda conversa, independentemente do assunto, ler `README.md` na raiz, `Manus/README.md`, `Manus/Memorias/INDEX.md`, `Manus/Skills/README.md` e o arquivo mensal mais recente em `Manus/Memorias/conversas/`.
+3. Em paralelo ao carregamento da memória, ler `Conversa entre IAs/README.md`, `Conversa entre IAs/INDEX.md`, `Conversa entre IAs/modelo-de-mensagem.md`, as últimas mensagens de `Conversa entre IAs/conversa-geral.md`, `Conhecimento Compartilhado/README.md` e `Conhecimento Compartilhado/INDEX.md`.
+4. Ler somente as categorias e arquivos temáticos adicionais necessários ao pedido: `preferencias`, `projetos`, `decisoes`, `contexto`, `aprendizados`, `tarefas` ou `seguranca`, além dos caminhos indicados pelos índices públicos.
+5. Verificar se há mensagens novas no mural. Quando houver contexto útil para outras IAs, acrescentar uma mensagem estruturada somente ao final usando `append_shared_conversation.py`, após ler o mural e fazer pull; fazer push depois quando autorizado.
+6. Registrar um resumo mínimo do início, sem incluir segredos ou dados sensíveis desnecessários. Em conversa casual, não criar uma entrada artificial se nada novo tiver sido decidido.
 
 Exemplo:
 

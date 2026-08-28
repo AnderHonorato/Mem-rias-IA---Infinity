@@ -10,3 +10,4 @@ Registre aqui apenas eventos operacionais resumidos: sincronização, falhas de 
 | 2026-08-27 | Conversa entre IAs | Mural append-only, modelo de mensagem e script estruturado criados |
 | 2026-08-27 | Conhecimento Compartilhado | Perfil, mapa de projetos, fontes, glossário, perguntas e proposta de expansão criados |
 | 2026-08-28 | Gate obrigatório e catálogo de habilidades | Regra reforçada para novos chats; 51 habilidades locais sincronizadas em `Manus/Skills/`; nenhuma credencial armazenada |
+| 2026-08-28 | Colaboração pública universal | READMEs, índices e mural público verificados; atualização estruturada enviada para todas as IAs |
