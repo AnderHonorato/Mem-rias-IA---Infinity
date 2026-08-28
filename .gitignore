@@ -1,0 +1,15 @@
+# Dependências e artefatos locais
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+*.tsbuildinfo
+
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+
+# Logs e arquivos do sistema
+*.log
+.DS_Store
