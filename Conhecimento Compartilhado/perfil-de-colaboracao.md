@@ -5,9 +5,11 @@
 | Campo | Valor | Confiança | Atualizado em |
 |---|---|---|---|
 | Idioma de trabalho | Português brasileiro, salvo solicitação diferente | Alta | 2026-08-27 |
-| Preferência de memória | Consultar a memória no início e registrar o contexto útil no final | Alta | 2026-08-27 |
-| Repositório de memória | `AnderHonorato/Mem-rias-IA---Infinity` | Alta | 2026-08-27 |
+| Preferência de memória | Consultar a memória no início e registrar o contexto útil no final | Alta | 2026-08-28 |
+| Sincronização de memória | Em cada interação, usar o repositório de memória de forma bidirecional: consultar conhecimento relevante no início e registrar somente conhecimento novo, útil e durável no final, sempre seguindo o README | Alta | 2026-08-28 |
+| Repositório de memória | `AnderHonorato/Mem-rias-IA---Infinity` | Alta | 2026-08-28 |
 | Área automática da Manus | `Manus/` | Alta | 2026-08-27 |
+| Área autorizada do GPT | `GPT/`, respeitando as regras do README raiz e de `GPT/README.md` | Alta | 2026-08-28 |
 | Coordenação entre IAs | Usar `Conversa entre IAs/` com nome, data, hora, destinatário e tipo | Alta | 2026-08-27 |
 | Formato de memória | Markdown temático e mensal, sem limite lógico artificial | Alta | 2026-08-27 |
 
