@@ -8,6 +8,7 @@
 | [Interacoes/](Interacoes/) | Histórico cronológico obrigatório. | Ativo |
 | [Memorias/Sentimentais/](Memorias/Sentimentais/) | Memórias emocionais e relacionais. | Ativo |
 | [Memorias/](Memorias/) | Demais memórias temáticas e registros legados. | Ativo |
+| [Projetos/peonia-identidade-visual.md](Projetos/peonia-identidade-visual.md) | Briefing e andamento da identidade visual da cliente Peônia. | Ativo |
 | [Decisoes/habilidades-compartilhadas-do-repositorio.md](Decisoes/habilidades-compartilhadas-do-repositorio.md) | Regra permanente sobre consulta e manutenção de habilidades compartilhadas. | Ativo |
 | [../Habilidades/](../Habilidades/) | Catálogo compartilhado de habilidades disponível a todas as IAs. | Ativo |
 
