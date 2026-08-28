@@ -200,7 +200,7 @@ ffuf --request req.txt -w /path/to/wordlist.txt -ac
 POST /api/v1/users/FUZZ HTTP/1.1
 Host: target.com
 User-Agent: Mozilla/5.0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Authorization: Bearer <JWT_BEARER_TOKEN>
 Cookie: session=abc123xyz; csrftoken=def456
 Content-Type: application/json
 Content-Length: 27

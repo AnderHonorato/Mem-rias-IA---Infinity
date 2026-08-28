@@ -8,7 +8,7 @@ These are example `req.txt` templates for common authenticated fuzzing scenarios
 GET /api/v1/users/FUZZ HTTP/1.1
 Host: api.target.com
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+Authorization: Bearer <JWT_BEARER_TOKEN>
 Accept: application/json
 Content-Type: application/json
 ```
@@ -47,7 +47,7 @@ ffuf --request req.txt -w payloads.txt -ac -fc 403 -o results.json
 GET /v2/data/FUZZ HTTP/1.1
 Host: api.target.com
 User-Agent: Custom-Client/1.0
-X-API-Key: YOUR_API_KEY_HERE_abc123def456ghi789jkl
+X-API-Key: <API_KEY>
 Accept: application/json
 ```
 
@@ -64,7 +64,7 @@ ffuf --request req.txt -w endpoints.txt -ac -mc 200 -o results.json
 GET /admin/FUZZ HTTP/1.1
 Host: target.com
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36
-Authorization: Basic YWRtaW46cGFzc3dvcmQxMjM=
+Authorization: Basic <BASIC_AUTH_VALUE>
 Accept: text/html,application/xhtml+xml
 ```
 
@@ -81,7 +81,7 @@ ffuf --request req.txt -w admin-paths.txt -ac -mc 200,301,302 -o results.json
 GET /api/v1/resources/FUZZ HTTP/1.1
 Host: api.target.com
 User-Agent: OAuth-Client/2.0
-Authorization: Bearer ya29.a0AfH6SMBx...truncated...aBcDeFgHiJ
+Authorization: Bearer <OAUTH_BEARER_TOKEN>
 Accept: application/json
 Cache-Control: no-cache
 ```
@@ -99,7 +99,7 @@ ffuf --request req.txt -w resource-names.txt -ac -mc 200,404 -fw 50-100 -o resul
 POST /api/v1/query HTTP/1.1
 Host: api.target.com
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Authorization: Bearer <JWT_BEARER_TOKEN>
 Content-Type: application/json
 Accept: application/json
 Content-Length: 45
@@ -120,7 +120,7 @@ ffuf --request req.txt -w sqli-payloads.txt -ac -fr "error" -o results.json
 GET /api/v1/users/USER_ID/documents/DOC_ID HTTP/1.1
 Host: api.target.com
 User-Agent: Mozilla/5.0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Authorization: Bearer <JWT_BEARER_TOKEN>
 Accept: application/json
 ```
 
@@ -142,7 +142,7 @@ ffuf --request req.txt \
 POST /graphql HTTP/1.1
 Host: api.target.com
 User-Agent: GraphQL-Client/1.0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Authorization: Bearer <JWT_BEARER_TOKEN>
 Content-Type: application/json
 Accept: application/json
 Content-Length: 89
