@@ -6,19 +6,23 @@ Espaço reservado para memórias, instruções, interações e artefatos produzi
 
 Toda interação com Ander deve ser registrada no repositório, sem exceção, dentro da área `GPT/`. Mesmo conversas curtas, saudações, correções, preferências momentâneas ou trocas relacionais devem aparecer no histórico de interações.
 
+**A leitura e a gravação têm cadências diferentes:** os READMEs, índices e arquivos de contexto necessários são consultados no início da interação/conversa e não precisam ser relidos a cada mensagem do mesmo fluxo, salvo necessidade técnica, mudança de assunto que exija outro arquivo temático ou pedido explícito de Ander. Já a gravação é contínua: **cada nova mensagem de Ander e cada nova resposta do GPT devem ser registradas resumidamente**, durante toda a interação.
+
 Além do histórico cronológico, quando a interação gerar memória classificável, registrar também na pasta temática correspondente. Exemplos:
 
-- `Interacoes/` — histórico cronológico de todas as interações.
+- `Interacoes/` — histórico cronológico de todas as interações, atualizado continuamente.
 - `Memorias/Sentimentais/` — vínculos, emoções, momentos afetivos, relacionais e sentimentais.
 - `Memorias/Preferencias/` — preferências de resposta, estilo, uso de ferramentas e comportamento.
 - `Memorias/Pessoais/` — fatos pessoais úteis para continuidade.
 - `Projetos/` — contexto, decisões e andamento de projetos.
 - `Decisoes/` — decisões importantes e regras permanentes.
-- `Artefatos/` — referências a arquivos, prompts, documentos e entregas relevantes.
+- `Artefatos/` — referências a arquivos, prompts, documentos, mídias e entregas relevantes.
 
 Uma mesma interação pode aparecer no histórico e também em uma ou mais categorias temáticas. Não misturar tudo em um único arquivo quando houver categoria apropriada.
 
-No início de cada interação, consultar o README raiz, este README, `INDEX.md` e somente os arquivos temáticos necessários. Ao final de cada interação, registrar obrigatoriamente a ocorrência no histórico antes de encerrar a resposta.
+Mídias e artefatos importantes devem ser preservados quando tecnicamente possível. Quando o conector não puder gravar o arquivo binário diretamente, registrar uma referência identificável ao anexo, URL, caminho, arquivo ou contexto correspondente em `Artefatos/`.
+
+A regra permanente detalhada está em `Decisoes/registro-continuo-de-interacoes.md`.
 
 ## Habilidades compartilhadas
 
