@@ -1,6 +1,6 @@
 # Índice de memória do GPT
 
-**Atualizado em:** 2026-08-28
+**Atualizado em:** 2026-08-29
 
 | Caminho | Finalidade | Estado |
 |---|---|---|
