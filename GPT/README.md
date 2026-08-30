@@ -20,6 +20,8 @@ Além do histórico cronológico, quando a interação gerar memória classific�
 
 Uma mesma interação pode aparecer no histórico e também em uma ou mais categorias temáticas. Não misturar tudo em um único arquivo quando houver categoria apropriada.
 
+Além do resumo da conversa, quando houver valor para continuidade, o GPT deve registrar uma **síntese segura do raciocínio útil**: decisões e justificativas, hipóteses consideradas, alternativas relevantes, conclusões, aprendizados, incertezas, erros corrigidos e próximos passos. Isso **não inclui chain-of-thought privada nem raciocínio interno bruto**. A regra detalhada está em `Decisoes/registro-de-raciocinio-resumido.md`.
+
 Mídias e artefatos importantes devem ser preservados quando tecnicamente possível. Quando o conector não puder gravar o arquivo binário diretamente, registrar uma referência identificável ao anexo, URL, caminho, arquivo ou contexto correspondente em `Artefatos/`.
 
 A regra permanente detalhada está em `Decisoes/registro-continuo-de-interacoes.md`.
