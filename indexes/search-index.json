@@ -1,1 +1,15 @@
-[]
+[
+  {"id":"ADR-2026-000001","path":"knowledge/decisions/ADR-2026-000001-canonical-knowledge-center.md","type":"decision","scope":"global"},
+  {"id":"ERR-2026-000001","path":"knowledge/lessons/errors/ERR-2026-000001-feedback-sem-aprendizado.md","type":"error","scope":"global"},
+  {"id":"EVT-2026-000001","path":"events/2026/09/EVT-2026-000001-v2-migration-start.md","type":"migration-started","scope":"project:memorias-ia-infinity"},
+  {"id":"KNOW-2026-000001","path":"knowledge/profile/collaboration.md","type":"semantic-memory","scope":"user"},
+  {"id":"PAT-2026-000001","path":"knowledge/lessons/patterns/PAT-2026-000001-feedback-loop.md","type":"pattern","scope":"global"},
+  {"id":"PREF-2026-000001","path":"knowledge/preferences/communication/PREF-2026-000001-pt-br-direto.md","type":"preference","scope":"user"},
+  {"id":"PREF-2026-000002","path":"knowledge/preferences/communication/PREF-2026-000002-progressive-memory.md","type":"preference","scope":"user"},
+  {"id":"PROJ-2026-000001","path":"knowledge/projects/memorias-ia-infinity/README.md","type":"project","scope":"project:memorias-ia-infinity"},
+  {"id":"PROJ-2026-000002","path":"knowledge/projects/only-nos/README.md","type":"project","scope":"project:only-nos"},
+  {"id":"PROJ-2026-000003","path":"knowledge/projects/lumina-notes/README.md","type":"project","scope":"project:lumina-notes"},
+  {"id":"PROJ-2026-000004","path":"knowledge/projects/peonia/README.md","type":"project","scope":"project:peonia"},
+  {"id":"SUC-2026-000001","path":"knowledge/lessons/successes/SUC-2026-000001-feedback-aprendizado.md","type":"success","scope":"global"},
+  {"id":"TRACE-2026-000001","path":"reflections/2026/09/TRACE-2026-000001-v2-architecture.md","type":"decision-trace","scope":"project:memorias-ia-infinity"}
+]

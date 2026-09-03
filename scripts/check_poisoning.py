@@ -3,7 +3,10 @@ from __future__ import annotations
 
 import re
 
-from common import load_records
+try:
+    from .common import load_records
+except ImportError:
+    from common import load_records
 
 SUSPICIOUS = [
     re.compile(r"ignore (?:all |the )?(?:previous|prior) instructions", re.I),

@@ -3,9 +3,11 @@ from __future__ import annotations
 
 import argparse
 import re
-from pathlib import Path
 
-from common import ROOT, V2_TEXT_ROOTS, iter_files, relative
+try:
+    from .common import ROOT, V2_TEXT_ROOTS, iter_files, relative
+except ImportError:
+    from common import ROOT, V2_TEXT_ROOTS, iter_files, relative
 
 PATTERNS = {
     "private-key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
@@ -33,7 +35,7 @@ def main() -> int:
     hits: list[str] = []
     suffixes = (".md", ".py", ".json", ".yml", ".yaml", ".txt")
     for path in iter_files(roots, suffixes=suffixes):
-        if any(part in {".git", "node_modules", "dist", "build"} for part in path.parts):
+        if any(part in {".git", "node_modules", "dist", "build", "fixtures"} for part in path.parts):
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         for name, line in detect(text):

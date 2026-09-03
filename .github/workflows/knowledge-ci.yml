@@ -1,0 +1,51 @@
+name: Knowledge CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - refactor/knowledge-center-v2
+
+permissions:
+  contents: read
+
+jobs:
+  knowledge-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install validation dependencies
+        run: pip install -r requirements-memory.txt
+
+      - name: Validate memory schemas and IDs
+        run: python scripts/validate_memory.py
+
+      - name: Check links and relationships
+        run: |
+          python scripts/check_links.py
+          python scripts/check_duplicates.py
+          python scripts/check_conflicts.py
+
+      - name: Check temporal freshness
+        run: python scripts/check_freshness.py
+
+      - name: Check secrets
+        run: python scripts/check_secrets.py
+
+      - name: Check memory poisoning heuristics
+        run: python scripts/check_poisoning.py
+
+      - name: Check generated indexes
+        run: python scripts/rebuild_indexes.py --check
+
+      - name: Security and model tests
+        run: python -m unittest discover -s tests -p 'test_*.py'

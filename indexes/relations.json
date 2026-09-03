@@ -1,1 +1,6 @@
-[]
+[
+  {"from":"ERR-2026-000001","relation":"related_success","to":"SUC-2026-000001"},
+  {"from":"PAT-2026-000001","relation":"derived_from","to":"ERR-2026-000001"},
+  {"from":"PAT-2026-000001","relation":"derived_from","to":"SUC-2026-000001"},
+  {"from":"SUC-2026-000001","relation":"related_error","to":"ERR-2026-000001"}
+]
