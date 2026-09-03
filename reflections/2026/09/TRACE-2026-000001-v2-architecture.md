@@ -20,7 +20,7 @@ generated_by:
 Transformar a V1 em Central de Conhecimento compartilhada sem apagar histórico recente.
 
 # Contexto observado
-A V1 possui pastas nominais por IA, área compartilhada, mural e skills. O README ainda centralizava regras da Manus. A branch de aprendizado por feedback estava 22 commits à frente e 5 atrás da `main`, portanto não era base segura.
+A V1 possuía pastas nominais por IA, área compartilhada, mural e skills. O README ainda centralizava regras da Manus. A branch de aprendizado por feedback estava 22 commits à frente e 5 atrás da `main`, portanto não era base segura.
 
 # Alternativas relevantes
 - Manter uma base completa por IA: rejeitado por duplicação/divergência.
@@ -28,17 +28,19 @@ A V1 possui pastas nominais por IA, área compartilhada, mural e skills. O READM
 - Markdown canônico + adaptadores + índices derivados: escolhido.
 
 # Evidências
-- Auditoria Git da main e comparação de branches.
+- Auditoria Git da `main` e comparação de branches.
 - Documentação oficial de Codex, Claude Code, Gemini CLI, GitHub Copilot, JSON Schema, W3C PROV e OWASP Agentic Security.
+- `Knowledge CI` run `33714881282`: schemas/IDs, links/relações, conflitos, freshness, secrets, poisoning, índices e testes concluídos com sucesso.
+- Revisão final do PR #1 sem bloqueios.
 
 # Decisão
-Criar V2 paralela com `knowledge/`, `events/`, `reflections/`, `agents/`, `coordination/`, `skills/`, schemas/scripts/tests e adaptadores pequenos.
+Criar V2 paralela com `knowledge/`, `events/`, `reflections/`, `agents/`, `coordination/`, `skills/`, schemas/scripts/tests e adaptadores pequenos; preservar a V1 e promover conteúdo seletivamente.
 
 # Incertezas
-Nem todo conteúdo V1 foi promovido nesta primeira consolidação. Conteúdo ainda não classificado permanece preservado no legado.
+Nem todo conteúdo V1 foi promovido na primeira consolidação. Isso é intencional: conteúdo ainda não classificado permanece preservado no legado e não recebe autoridade canônica automaticamente.
 
 # Resultado
-Fundação V2 e migração dos projetos/feedback identificados como canônicos foram iniciadas sem apagar arquivos V1.
+A fundação V2 e a migração inicial foram implementadas, validadas e integradas à `main` pelo PR #1. Merge commit: `c649463bfa713a60a1bab5c529c663d793c26983`.
 
 # Aprendizado reutilizável
-Branches divergidas com conhecimento novo devem ser reconciliadas semanticamente em vez de usadas diretamente como base.
+Branches divergidas com conhecimento novo devem ser reconciliadas semanticamente em vez de usadas diretamente como base. Estado de projeto deve ser atualizado após o merge para não deixar memória temporal contraditória.
