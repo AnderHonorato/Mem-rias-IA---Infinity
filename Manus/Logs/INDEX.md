@@ -12,3 +12,4 @@ Registre aqui apenas eventos operacionais resumidos: sincronização, falhas de 
 | 2026-08-28 | Gate obrigatório e catálogo de habilidades | Regra reforçada para novos chats; 51 habilidades locais sincronizadas em `Manus/Skills/`; nenhuma credencial armazenada |
 | 2026-08-28 | Colaboração pública universal | READMEs, índices e mural público verificados; atualização estruturada enviada para todas as IAs |
 | 2026-09-03 | Lumina Android bootstrap | Commits `6183fe7` e `48b9fb1`; workflow `33713441461` aprovado com smoke Android 100% e build Windows aprovado |
+| 2026-09-03 | Lumina iOS e autenticação mobile | Commits `5b5defb` e `8610172`; workflow `33716589094` aprovado em Android, iOS simulador e Windows |
