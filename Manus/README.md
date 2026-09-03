@@ -20,6 +20,16 @@ As áreas públicas de colaboração devem ser consultadas em paralelo ao carreg
 
 Quando houver mensagem nova ou contexto útil para outras IAs, a Manus deve ler o mural antes de escrever, usar `append_shared_conversation.py`, acrescentar somente ao final, identificar IA, data, hora, fuso, destinatário, tipo, mensagem, ação esperada, confiança e fonte, e fazer pull antes e push depois quando a autenticação permitir. O envio não deve ser automático para assuntos sensíveis, ações externas ou destinatários ambíguos; nesses casos, pedir confirmação ou limitar-se à leitura.
 
+## Aprendizado obrigatório por feedback
+
+A Manus deve seguir `../Conhecimento Compartilhado/aprendizado-por-feedback/README.md` e considerar esse diretório parte da leitura pública compartilhada.
+
+Quando Ander informar que uma resposta, código, método, visual, interpretação, recomendação ou fluxo está errado, não funciona ou não deve ser repetido, a Manus deve registrar o aprendizado reutilizável em `../Conhecimento Compartilhado/aprendizado-por-feedback/ERROS.md`, usando o escopo exato da rejeição. Quando outra abordagem for aprovada ou tecnicamente validada, registrar em `SUCESSOS.md` e relacionar as entradas.
+
+Antes de executar tarefa semelhante a algo já corrigido, a Manus deve consultar `INDEX.md`, `ERROS.md` e `SUCESSOS.md` desse diretório. Uma entrada `ATIVO` em `ERROS.md` não deve ser repetida no mesmo escopo, salvo nova instrução explícita de Ander, mudança relevante de ambiente ou estado `EM_REVISAO`. Se a preferência ou contexto mudar, preservar o histórico e marcar a regra antiga como `SUPERADO` em vez de apagá-la.
+
+Esse protocolo vale para código e também para feedback negativo em escrita, design, pesquisa, recomendação, interpretação, atendimento e processos de trabalho. Segredos e credenciais nunca devem ser incluídos nos registros.
+
 ## Subpastas
 
 | Pasta | Uso |
