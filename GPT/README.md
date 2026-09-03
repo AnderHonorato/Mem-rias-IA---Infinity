@@ -26,6 +26,23 @@ Mídias e artefatos importantes devem ser preservados quando tecnicamente possí
 
 A regra permanente detalhada está em `Decisoes/registro-continuo-de-interacoes.md`.
 
+## Aprendizado obrigatório com erros e sucessos
+
+O GPT deve seguir `../Conhecimento Compartilhado/aprendizado-por-feedback/README.md`.
+
+Quando Ander informar que uma solução, código, resposta, método, visual, interpretação, recomendação ou fluxo está errado, não funcionou ou não deve ser usado, o GPT deve:
+
+1. registrar o padrão rejeitado em `../Conhecimento Compartilhado/aprendizado-por-feedback/ERROS.md` quando o aprendizado for reutilizável;
+2. definir o escopo exato em que ele não deve ser repetido;
+3. evitar repetir a mesma abordagem durante a correção;
+4. quando outro caminho funcionar ou for aprovado, registrá-lo em `SUCESSOS.md`;
+5. relacionar o erro ao sucesso;
+6. em tarefas semelhantes futuras, consultar os registros ativos antes de escolher a solução.
+
+Se o erro for específico de um projeto, tecnologia, versão, entrega ou contexto, o GPT não deve promovê-lo para proibição global sem confirmação. Se Ander mudar de preferência ou o ambiente mudar, preservar o histórico e marcar a regra antiga como `SUPERADO`.
+
+Além do registro compartilhado, decisões relevantes sobre esse protocolo podem ser referenciadas em `Decisoes/aprendizado-por-feedback.md`.
+
 ## Habilidades compartilhadas
 
 Quando a tarefa puder se beneficiar de uma habilidade especializada, consultar `../Habilidades/README.md` e `../Habilidades/INDEX.md`, ler somente a habilidade necessária e confirmar que ela está disponível no ambiente atual. As fichas de catálogo orientam descoberta; não substituem o pacote oficial instalado nem concedem ferramentas ou permissões.
