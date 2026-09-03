@@ -10,6 +10,7 @@
 | [Memorias/](Memorias/) | Demais memórias temáticas e registros legados. | Ativo |
 | [Projetos/only-nos.md](Projetos/only-nos.md) | Contexto, deploy e pendências do projeto Only Nós (antigo Enlace). | Ativo |
 | [Projetos/peonia-identidade-visual.md](Projetos/peonia-identidade-visual.md) | Briefing e andamento da identidade visual da cliente Peônia. | Ativo |
+| [Projetos/lumina-notes.md](Projetos/lumina-notes.md) | Evolução Android do Lumina Notes, correção do bootstrap SQLite, diagnóstico de carregamento e APK validado em emulador. | Ativo |
 | [Decisoes/habilidades-compartilhadas-do-repositorio.md](Decisoes/habilidades-compartilhadas-do-repositorio.md) | Regra permanente sobre consulta e manutenção de habilidades compartilhadas. | Ativo |
 | [Decisoes/registro-continuo-de-interacoes.md](Decisoes/registro-continuo-de-interacoes.md) | Regra permanente: ler contexto no início e registrar resumidamente cada nova mensagem do usuário e resposta do GPT. | Ativo |
 | [Decisoes/registro-de-raciocinio-resumido.md](Decisoes/registro-de-raciocinio-resumido.md) | Regra permanente: registrar sínteses seguras de decisões, hipóteses, aprendizados, incertezas e próximos passos, sem chain-of-thought privada. | Ativo |
