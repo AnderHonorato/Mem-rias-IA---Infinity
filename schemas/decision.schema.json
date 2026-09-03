@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://memorias-ia-infinity.local/schemas/decision.schema.json",
+  "title": "Decision",
+  "type": "object",
+  "required": ["id", "schema_version", "type", "status", "scope", "created_at", "confidence", "sensitivity", "source", "generated_by"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^ADR-[0-9]{4}-[0-9]{6}$"},
+    "schema_version": {"const": 1},
+    "type": {"const": "decision"},
+    "status": {"enum": ["active", "superseded", "disputed", "review", "archived", "draft"]},
+    "scope": {"type": "string", "minLength": 1},
+    "created_at": {},
+    "confidence": {"enum": ["confirmed", "observed", "sourced", "inferred", "uncertain", "disputed"]},
+    "sensitivity": {"enum": ["normal", "personal", "restricted"]},
+    "source": {"type": "object"},
+    "generated_by": {"type": "object"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://memorias-ia-infinity.local/schemas/lesson.schema.json",
+  "title": "Lesson",
+  "type": "object",
+  "required": ["id", "schema_version", "type", "status", "scope", "created_at", "confidence", "sensitivity", "source", "generated_by"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^(ERR|SUC|PAT)-[0-9]{4}-[0-9]{6}$"},
+    "schema_version": {"const": 1},
+    "type": {"enum": ["error", "success", "pattern"]},
+    "status": {"enum": ["active", "superseded", "disputed", "review", "archived", "draft"]},
+    "scope": {"type": "string", "minLength": 1},
+    "created_at": {},
+    "confidence": {"enum": ["confirmed", "observed", "sourced", "inferred", "uncertain", "disputed"]},
+    "sensitivity": {"enum": ["normal", "personal", "restricted"]},
+    "source": {"type": "object"},
+    "generated_by": {"type": "object"},
+    "related_error": {"type": "string"},
+    "related_success": {"type": "string"},
+    "derived_from": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
