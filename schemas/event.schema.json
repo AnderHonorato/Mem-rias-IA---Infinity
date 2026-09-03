@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://memorias-ia-infinity.local/schemas/event.schema.json",
+  "title": "Event",
+  "type": "object",
+  "required": ["id", "schema_version", "type", "status", "scope", "occurred_at", "actor", "confidence", "sensitivity", "source", "generated_by"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^EVT-[0-9]{4}-[0-9]{6}$"},
+    "schema_version": {"const": 1},
+    "type": {"type": "string", "minLength": 1},
+    "status": {"enum": ["recorded", "archived"]},
+    "scope": {"type": "string", "minLength": 1},
+    "occurred_at": {},
+    "actor": {"type": "string", "minLength": 1},
+    "confidence": {"enum": ["confirmed", "observed", "sourced", "inferred", "uncertain", "disputed"]},
+    "sensitivity": {"enum": ["normal", "personal", "restricted"]},
+    "source": {"type": "object"},
+    "generated_by": {"type": "object"}
+  },
+  "additionalProperties": true
+}

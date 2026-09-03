@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://memorias-ia-infinity.local/schemas/provenance.schema.json",
+  "title": "Provenance Fragment",
+  "type": "object",
+  "properties": {
+    "source": {"type": "object", "required": ["type"], "additionalProperties": true},
+    "generated_by": {"type": "object", "required": ["agent"], "additionalProperties": true},
+    "derived_from": {"type": "array", "items": {"type": "string"}},
+    "attributed_to": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array"}
+  },
+  "additionalProperties": true
+}
