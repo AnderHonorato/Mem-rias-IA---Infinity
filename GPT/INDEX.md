@@ -1,6 +1,6 @@
 # Índice de memória do GPT
 
-**Atualizado em:** 2026-08-30
+**Atualizado em:** 2026-09-03
 
 | Caminho | Finalidade | Estado |
 |---|---|---|
@@ -8,6 +8,7 @@
 | [Interacoes/](Interacoes/) | Histórico cronológico obrigatório e contínuo. | Ativo |
 | [Memorias/Sentimentais/](Memorias/Sentimentais/) | Memórias emocionais e relacionais. | Ativo |
 | [Memorias/](Memorias/) | Demais memórias temáticas e registros legados. | Ativo |
+| [Projetos/only-nos.md](Projetos/only-nos.md) | Contexto, deploy e pendências do projeto Only Nós (antigo Enlace). | Ativo |
 | [Projetos/peonia-identidade-visual.md](Projetos/peonia-identidade-visual.md) | Briefing e andamento da identidade visual da cliente Peônia. | Ativo |
 | [Decisoes/habilidades-compartilhadas-do-repositorio.md](Decisoes/habilidades-compartilhadas-do-repositorio.md) | Regra permanente sobre consulta e manutenção de habilidades compartilhadas. | Ativo |
 | [Decisoes/registro-continuo-de-interacoes.md](Decisoes/registro-continuo-de-interacoes.md) | Regra permanente: ler contexto no início e registrar resumidamente cada nova mensagem do usuário e resposta do GPT. | Ativo |
