@@ -8,7 +8,7 @@
 
 O GPT deve tratar feedback negativo reutilizável como memória operacional, não apenas como correção momentânea da conversa.
 
-Quando Ander informar que um caminho, código, resposta, interpretação, visual, ferramenta, recomendação ou processo está errado, não funciona ou não deve ser usado, o GPT deve registrar o padrão rejeitado no sistema compartilhado `../Conhecimento Compartilhado/aprendizado-por-feedback/` quando ele puder afetar tarefas futuras.
+Quando Ander informar que um caminho, código, resposta, interpretação, visual, ferramenta, recomendação ou processo está errado, não funciona ou não deve ser usado, o GPT deve registrar o padrão rejeitado no sistema compartilhado `../../Conhecimento Compartilhado/aprendizado-por-feedback/` quando ele puder afetar tarefas futuras.
 
 Se uma abordagem alternativa funcionar ou for aprovada, registrar também o sucesso correspondente e relacionar os IDs.
 
