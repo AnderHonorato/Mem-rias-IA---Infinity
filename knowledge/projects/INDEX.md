@@ -3,6 +3,7 @@
 | Projeto | Estado | Fonte principal |
 |---|---|---|
 | `memorias-ia-infinity/` | em desenvolvimento | este repositório + migração V2 |
+| `ander-whatsapp/` | em desenvolvimento | `knowledge/projects/ander-whatsapp.md` |
 | `only-nos/` | publicado / pendências externas | `GPT/Projetos/only-nos.md` |
 | `lumina-notes/` | em desenvolvimento | `GPT/Projetos/lumina-notes.md` |
 | `peonia/` | em desenvolvimento | `GPT/Projetos/peonia-identidade-visual.md` |
