@@ -1,0 +1,46 @@
+---
+id: project-ander-whatsapp
+status: em-desenvolvimento
+scope: project/ander-whatsapp
+sensitivity: personal
+origin: trusted-user + agent-generated + observed-tool-results
+confidence: high-for-implemented-code / provisional-for-whatsapp-compatibility
+last_verified: 2026-10-08
+supersedes: null
+---
+# Ander WhatsApp (plugin privado e ponte local)
+
+## Objetivo confirmado
+Acessar WhatsApp pessoal sem controlar a tela nem depender de WhatsApp Web visível: ler e pesquisar mensagens, baixar anexos recebidos, manter memória **local privada** do que foi sincronizado e enviar mensagens apenas quando o usuário pedir. O usuário gostaria de escrever "GPT" na conversa consigo mesmo e receber resposta do ChatGPT nesta mesma conversa de ChatGPT e de volta no WhatsApp, sem chave externa/API paga.
+
+## Arquitetura observada
+- Plugin ChatGPT privado criado via Plugin Creator: `https://chatgpt.com/plugins/plugins_6ac726bceca88191b2a1f395eb5b8258`. A versão publicada deve ser revalidada em cada edição.
+- Ponte local Node.js/Baileys, sob `C:\Projetos\Andamento\Ander-WhatsApp` no PC autorizado; endpoint HTTP apenas em `127.0.0.1:41777`.
+- Ferramenta Remote Desktop Commander acessa o PC para consultas e envios autorizados.
+- Interface local com status, chats, login por chave local, QR e código de pareamento; o painel não está publicado na internet.
+- Armazenamento local: `data/messages.jsonl`, `data/contacts.json`, `data/media/`, `data/gpt-commands.jsonl`; nunca versionar essa pasta nem segredos.
+- `archive.mjs` registra mensagens deduplicadas e tenta baixar mídias normais (imagem/áudio/vídeo/documento/figurinha) com limites por tamanho e relatório de falha. Não arquiva payload de visualização única.
+- `gpt-inbox.mjs` identifica comandos de texto começando com GPT apenas da conversa do próprio dono, enviados em tempo real, e os deixa numa fila local para consulta futura. Não envia respostas automáticas.
+
+## Limite de plataforma importante
+**Um plugin não consegue por si só inserir uma nova mensagem nesta conversa ChatGPT, acordar o assistente em tempo real, nem produzir respostas WhatsApp imediatas sem alguma execução/autorização de ChatGPT.** A fila local pode ser lida quando o usuário invocar o plugin nesta conversa. Para resposta autônoma imediata seria preciso um serviço/modelo executando fora da conversa (por exemplo API ou IA local), que o usuário não quer usar neste momento. Nunca prometer tal capacidade.
+
+## Privacidade e segurança
+- Mensagens reais e arquivos de terceiros: manter localmente, sem copiar para o repositório de memórias. Salvar no GitHub apenas arquitetura, decisões, resultados técnicos, bugs e próximos passos.
+- Não publicar `data/auth`, chaves, QR, tokens, telefone e conteúdo de conversas.
+- Integrador Baileys é NÃO oficial e sujeito a instabilidade/restrições da conta.
+- Não responder a outras conversas automaticamente e não enviar nada sem pedido explícito. A conexão do PC precisa estar ativa.
+- O arquivo JSONL local contém conteúdo pessoal sem criptografia em repouso; segurança adicional e política de retenção são pendências.
+
+## Observações de testes e limitações
+- Em 08/10/2026, pareamento confirmado; em versões anteriores havia mais de 10 mil registros e muitas mensagens sem payload original, porque apenas texto/placeholders haviam sido salvos.
+- Download retroativo só é possível quando o WhatsApp disponibiliza novamente a mídia original; placeholders não contêm bytes recuperáveis.
+- Novos testes sintéticos demonstraram parse de texto, deduplicação, exclusão de view-once e isolamento de comandos GPT; download real de mídia e resposta ChatGPT automática ainda não comprovados.
+- A versão histórica de contatos/chats não garante o histórico completo ou ordenação perfeita de mensagens.
+
+## Próximos passos
+1. Validar chegada real de uma foto, áudio, vídeo e documento com usuário.
+2. Comprovar recuperação/retomada de mídia, índice de anexos, permissões e reprocessamento de falhas.
+3. Oferecer busca eficiente e retenção/backup seguro, opcionalmente com criptografia de arquivos.
+4. Se o usuário quiser acesso ao painel fora de casa, configurar túnel autenticado, sem expor porta local.
+5. Registrar cada decisão e teste significativo neste repositório conforme `AGENTS.md`.
