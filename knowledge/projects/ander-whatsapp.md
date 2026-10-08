@@ -58,3 +58,31 @@ Acessar WhatsApp pessoal sem controlar a tela nem depender de WhatsApp Web visí
 - O código local do projeto recebeu estrutura adicional para estados de comandos; a tentativa de completar o envio automático via ferramenta de escrita foi bloqueada e **não pode ser considerada implementada**. O processo já em execução permaneceu conectado, mas não reiniciado para ativar novos endpoints.
 - Testes estáticos/sintéticos verificados: 4/4 passaram; status operacional da ponte `conectado`; havia 1 comando `teste` na fila. Nenhuma resposta foi enviada.
 - Não prometer que tarefas agendadas possuem acesso ao Remote Desktop Commander até comprovar o primeiro disparo. Alternativa de resposta imediata sem API externa seria um modelo local separado, mas **não é o mesmo ChatGPT desta conversa**.
+
+
+## Atualização de requisitos e implementação — 08/10/2026 à noite
+
+**Decisão posterior, substitui as regras históricas que limitavam o atendimento automático à conversa do próprio usuário.** O usuário autorizou Metrys a responder automaticamente a contatos individuais, preservando proteções de privacidade.
+
+### Regras atuais
+- A espera para contatos comuns foi reduzida de **15 para 10 minutos** desde a primeira mensagem não respondida pelo proprietário.
+- O próprio usuário, ao enviar comandos começando em `GPT` para si mesmo, continua recebendo resposta sem atraso intencional (apenas o tempo de geração).
+- Um contato prioritário explicitamente indicado recebe resposta sem espera; o número é **privado** e fica apenas em `data/attendant-config.json`, nunca neste repositório.
+- Segunda a sexta, 07:30–16:30, e sábado, 08:00–12:00, horário de São Paulo: saudação informa que Ander está trabalhando. Fora dessas janelas informa que está ocupado.
+- Metrys sempre se apresenta como assistente virtual criado por Ander e usa o prefixo `*Metrys:*\n` nas respostas. Não informa o fornecedor do modelo local a terceiros.
+- Saudação oferece à pessoa aguardar Ander ou continuar com Metrys. Optando pela IA, respostas seguintes são imediatas e geradas localmente; preferindo Ander, Metrys não insiste. Resposta manual de Ander cancela pendências do contato.
+- Grupos/canais/status excluídos. Nenhum acesso a conteúdos de outras conversas no prompt para um terceiro. Limite de 12 respostas automáticas por contato a cada hora para reduzir loops entre robôs.
+- Cada envio revalida o destinatário e a tarefa elegível imediatamente antes de enviar. Respostas de resultado incerto não são repetidas automaticamente.
+
+### Implementação técnica observada
+- Novo módulo local `attendant.mjs` com estados privados persistentes, regras de horário, identificação de mensagens próprias e timeout configurável.
+- A ponte `bridge.mjs` conecta eventos ao detector e expõe rotas locais autenticadas `/attendant/status`, `/attendant/tasks` e `/attendant/send`.
+- O trabalhador `local-ai.mjs` consulta filas e gera o atendimento conversacional usando o Ollama instalado no PC, sob o nome de atendimento Metrys.
+- Regras privadas `delaySeconds:600`, `immediateNumber`, `activatedAt` e `enabled` ficam fora do Git em `data/attendant-config.json`.
+- Em execução no PC, a API retornou `/attendant/status: enabled=true, delaySeconds=600, pending=0`, conexão WhatsApp `paired=true` e IA local com estado `ativo`.
+- **Testes sintéticos: 7/7 aprovados**, incluindo timeout, cancelamento por resposta manual, prioridade, exclusão de grupo e da conversa própria, fronteiras de horários e estado de comando.
+- Proteção negativa validada: tentativa de enviar a uma conversa com tarefa não existente retornou HTTP 400 e não iniciou envio.
+- **Pendente**: confirmar envio e cancelamento com contatos reais após a chegada de novas mensagens. Não alegar teste de entrega a destinatário real sem essa evidência.
+
+### Privacidade
+Todos os conteúdos de terceiros, números de telefone, arquivos pessoais, log de conversas, sessão e chaves permanecem apenas no PC privado. Memória Flow no GitHub registra somente regras técnicas, decisões e validações, conforme `AGENTS.md`. Modelos locais ainda podem produzir respostas incorretas; proteção de dados combina prompt, ausência de contexto privado e checagens de saída, sem garantia absoluta de segurança.
