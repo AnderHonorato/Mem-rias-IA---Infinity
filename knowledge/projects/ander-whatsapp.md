@@ -44,3 +44,9 @@ Acessar WhatsApp pessoal sem controlar a tela nem depender de WhatsApp Web visí
 3. Oferecer busca eficiente e retenção/backup seguro, opcionalmente com criptografia de arquivos.
 4. Se o usuário quiser acesso ao painel fora de casa, configurar túnel autenticado, sem expor porta local.
 5. Registrar cada decisão e teste significativo neste repositório conforme `AGENTS.md`.
+
+## Revisão verificada em 2026-10-08
+- Plugin privado atualizado e verificado na versão `0.3.0`, contendo instruções de consulta a anexos locais, fila `GPT` e protocolo de memória Flow.
+- Ponte local após reinício: `paired:true`, `connection:conectado`; estatísticas locais ainda registravam **0 mídias efetivamente baixadas**, portanto download real ainda precisa ser testado com uma mídia nova.
+- Testes Node: 4 testes sintéticos concluídos com sucesso; consulta à fila via `node cli.mjs gpt-commands` retornou lista vazia até receber novo comando válido.
+- Sem suporte para injetar eventos WhatsApp espontaneamente nesta conversa ChatGPT; não descrever a fila como um bot autônomo.
