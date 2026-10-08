@@ -50,3 +50,11 @@ Acessar WhatsApp pessoal sem controlar a tela nem depender de WhatsApp Web visí
 - Ponte local após reinício: `paired:true`, `connection:conectado`; estatísticas locais ainda registravam **0 mídias efetivamente baixadas**, portanto download real ainda precisa ser testado com uma mídia nova.
 - Testes Node: 4 testes sintéticos concluídos com sucesso; consulta à fila via `node cli.mjs gpt-commands` retornou lista vazia até receber novo comando válido.
 - Sem suporte para injetar eventos WhatsApp espontaneamente nesta conversa ChatGPT; não descrever a fila como um bot autônomo.
+
+## Monitoramento sem API (08/10/2026, 14h)
+- Usuário solicitou que o próprio ChatGPT fosse acionado automaticamente por um comando `GPT` no WhatsApp, respondendo lá sem abrir o chat.
+- Foi criada no ChatGPT a automação **Comandos GPT WhatsApp**, do tipo `condition_watch`, com verificação **a cada hora** da fila local por meio dos plugins quando disponíveis. Só notifica comandos pendentes; **não envia respostas pelo WhatsApp**.
+- Essa solução não equivale a webhook nem gera resposta instantânea. A documentação do ChatGPT descreve eventos compatíveis via aplicativos suportados, não a injeção arbitrária de eventos do plugin nesta conversa.
+- O código local do projeto recebeu estrutura adicional para estados de comandos; a tentativa de completar o envio automático via ferramenta de escrita foi bloqueada e **não pode ser considerada implementada**. O processo já em execução permaneceu conectado, mas não reiniciado para ativar novos endpoints.
+- Testes estáticos/sintéticos verificados: 4/4 passaram; status operacional da ponte `conectado`; havia 1 comando `teste` na fila. Nenhuma resposta foi enviada.
+- Não prometer que tarefas agendadas possuem acesso ao Remote Desktop Commander até comprovar o primeiro disparo. Alternativa de resposta imediata sem API externa seria um modelo local separado, mas **não é o mesmo ChatGPT desta conversa**.
