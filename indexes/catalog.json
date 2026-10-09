@@ -1,15 +1,155 @@
 [
-  {"id":"ADR-2026-000001","path":"knowledge/decisions/ADR-2026-000001-canonical-knowledge-center.md","type":"decision","status":"active","scope":"global"},
-  {"id":"ERR-2026-000001","path":"knowledge/lessons/errors/ERR-2026-000001-feedback-sem-aprendizado.md","type":"error","status":"active","scope":"global"},
-  {"id":"EVT-2026-000001","path":"events/2026/09/EVT-2026-000001-v2-migration-start.md","type":"migration-started","status":"recorded","scope":"project:memorias-ia-infinity"},
-  {"id":"KNOW-2026-000001","path":"knowledge/profile/collaboration.md","type":"semantic-memory","status":"active","scope":"user"},
-  {"id":"PAT-2026-000001","path":"knowledge/lessons/patterns/PAT-2026-000001-feedback-loop.md","type":"pattern","status":"active","scope":"global"},
-  {"id":"PREF-2026-000001","path":"knowledge/preferences/communication/PREF-2026-000001-pt-br-direto.md","type":"preference","status":"active","scope":"user"},
-  {"id":"PREF-2026-000002","path":"knowledge/preferences/communication/PREF-2026-000002-progressive-memory.md","type":"preference","status":"active","scope":"user"},
-  {"id":"PROJ-2026-000001","path":"knowledge/projects/memorias-ia-infinity/README.md","type":"project","status":"active","scope":"project:memorias-ia-infinity"},
-  {"id":"PROJ-2026-000002","path":"knowledge/projects/only-nos/README.md","type":"project","status":"active","scope":"project:only-nos"},
-  {"id":"PROJ-2026-000003","path":"knowledge/projects/lumina-notes/README.md","type":"project","status":"active","scope":"project:lumina-notes"},
-  {"id":"PROJ-2026-000004","path":"knowledge/projects/peonia/README.md","type":"project","status":"active","scope":"project:peonia"},
-  {"id":"SUC-2026-000001","path":"knowledge/lessons/successes/SUC-2026-000001-feedback-aprendizado.md","type":"success","status":"active","scope":"global"},
-  {"id":"TRACE-2026-000001","path":"reflections/2026/09/TRACE-2026-000001-v2-architecture.md","type":"decision-trace","status":"completed","scope":"project:memorias-ia-infinity"}
+  {
+    "id": "ADR-2026-000001",
+    "path": "knowledge/decisions/ADR-2026-000001-canonical-knowledge-center.md",
+    "type": "decision",
+    "status": "active",
+    "scope": "global",
+    "updated_at": "2026-09-03",
+    "sha256": "4077a2039be73381da197e8d01a2e9a2729a199558c3b6ee52d716cd851c689e"
+  },
+  {
+    "id": "ADR-2026-000002",
+    "path": "knowledge/decisions/ADR-2026-000002-metrys-mobile.md",
+    "type": "decision",
+    "status": "active",
+    "scope": "project/ander-whatsapp/metrys-mobile",
+    "updated_at": "2026-10-08",
+    "sha256": "cda2d76135750608041617c30a82456272aa5eef1b58de64d87b3c6077fd1608"
+  },
+  {
+    "id": "ERR-2026-000001",
+    "path": "knowledge/lessons/errors/ERR-2026-000001-feedback-sem-aprendizado.md",
+    "type": "error",
+    "status": "active",
+    "scope": "global",
+    "updated_at": "2026-09-03",
+    "sha256": "d3622929fedd579a4becf3130cc57bfab754e70b4ada250e76e6597719caa48e"
+  },
+  {
+    "id": "EVT-2026-000001",
+    "path": "events/2026/09/EVT-2026-000001-v2-migration-start.md",
+    "type": "migration-started",
+    "status": "recorded",
+    "scope": "project:memorias-ia-infinity",
+    "updated_at": "2026-09-03 01:08:00-03:00",
+    "sha256": "56f5a3c7611b9744a34f60512ac6333530f5ec350341c132e166c47cb7d51e1e"
+  },
+  {
+    "id": "EVT-2026-001008",
+    "path": "events/2026/10/2026-10-08-ander-whatsapp-media-and-gpt.md",
+    "type": "event",
+    "status": "recorded",
+    "scope": "project:ander-whatsapp",
+    "updated_at": "2026-10-08",
+    "sha256": "8f3a8299a565a324ee0722f6fa9c88bdbc3b07e85c7153245801e8da76ab8d24"
+  },
+  {
+    "id": "EVT-2026-001009",
+    "path": "events/2026/10/EVT-2026-001009-metrys-mobile-primeiro-chat-android.md",
+    "type": "event",
+    "status": "recorded",
+    "scope": "project:ander-whatsapp/metrys-mobile",
+    "updated_at": "2026-10-08",
+    "sha256": "81a3be255bf18140ec4e16ac97c86cd884dd2ca72ec9efb9b44994af99c79cf8"
+  },
+  {
+    "id": "KNOW-2026-000001",
+    "path": "knowledge/profile/collaboration.md",
+    "type": "semantic-memory",
+    "status": "active",
+    "scope": "user",
+    "updated_at": "2026-09-03",
+    "sha256": "c86bcdea0f0de1db3a2fe5e501c5f0ce30975228e92886b21d0a6bfef34e71cc"
+  },
+  {
+    "id": "PAT-2026-000001",
+    "path": "knowledge/lessons/patterns/PAT-2026-000001-feedback-loop.md",
+    "type": "pattern",
+    "status": "active",
+    "scope": "global",
+    "updated_at": "2026-09-03",
+    "sha256": "64f2281f57058074f9e18e857e20956088ef24da041f075b0a1a2094cab18460"
+  },
+  {
+    "id": "PREF-2026-000001",
+    "path": "knowledge/preferences/communication/PREF-2026-000001-pt-br-direto.md",
+    "type": "preference",
+    "status": "active",
+    "scope": "user",
+    "updated_at": "2026-09-03",
+    "sha256": "73c34909deedb57a40192968d7f3e83016668d29676352cc793d12544ca4edee"
+  },
+  {
+    "id": "PREF-2026-000002",
+    "path": "knowledge/preferences/communication/PREF-2026-000002-progressive-memory.md",
+    "type": "preference",
+    "status": "active",
+    "scope": "user",
+    "updated_at": "2026-09-03",
+    "sha256": "162e71a67020cce2dc595673d8e2ce0b09837e3737e1f5d94f3795837a60c533"
+  },
+  {
+    "id": "PROJ-2026-000001",
+    "path": "knowledge/projects/memorias-ia-infinity/README.md",
+    "type": "project",
+    "status": "active",
+    "scope": "project:memorias-ia-infinity",
+    "updated_at": "2026-09-03",
+    "sha256": "58377c810a78004cd0afb3a32cfefd04018a976d9565f57cfef6d8564e05b9af"
+  },
+  {
+    "id": "PROJ-2026-000002",
+    "path": "knowledge/projects/only-nos/README.md",
+    "type": "project",
+    "status": "active",
+    "scope": "project:only-nos",
+    "updated_at": "2026-09-03",
+    "sha256": "758c9bc5b6e2712ecf0822c7a3beb50befccdbcf03503bbebebbd36bce37c0ec"
+  },
+  {
+    "id": "PROJ-2026-000003",
+    "path": "knowledge/projects/lumina-notes/README.md",
+    "type": "project",
+    "status": "active",
+    "scope": "project:lumina-notes",
+    "updated_at": "2026-09-03",
+    "sha256": "70778a2b67e434e4b52821fdc6c505204f6140927a2d3c86781d4ee9b6b9eb55"
+  },
+  {
+    "id": "PROJ-2026-000004",
+    "path": "knowledge/projects/peonia/README.md",
+    "type": "project",
+    "status": "active",
+    "scope": "project:peonia",
+    "updated_at": "2026-09-03",
+    "sha256": "1c75a3f89e56b8ee2e8a4dfe9d77122cec7d2f676b1f743e738cf5fc4bcfbe87"
+  },
+  {
+    "id": "PROJ-2026-001008",
+    "path": "knowledge/projects/ander-whatsapp.md",
+    "type": "project",
+    "status": "active",
+    "scope": "project:ander-whatsapp",
+    "updated_at": "2026-10-08",
+    "sha256": "f1b2b732f27d48800d0af22b25081d36b3bcbf20324031c0035dd99bd7bebc12"
+  },
+  {
+    "id": "SUC-2026-000001",
+    "path": "knowledge/lessons/successes/SUC-2026-000001-feedback-aprendizado.md",
+    "type": "success",
+    "status": "active",
+    "scope": "global",
+    "updated_at": "2026-09-03",
+    "sha256": "996d1fe0422d520141aba03e741e9bf99c14289211f8378ac988cdbb6b864bbc"
+  },
+  {
+    "id": "TRACE-2026-000001",
+    "path": "reflections/2026/09/TRACE-2026-000001-v2-architecture.md",
+    "type": "decision-trace",
+    "status": "completed",
+    "scope": "project:memorias-ia-infinity",
+    "updated_at": "2026-09-03",
+    "sha256": "e815b18adf865b560a8797117e1f202b96074a3b7565eb6004b89499c4c584d3"
+  }
 ]

@@ -1,12 +1,19 @@
 ---
-id: project-ander-whatsapp
-status: em-desenvolvimento
-scope: project/ander-whatsapp
+id: PROJ-2026-001008
+schema_version: 1
+type: project
+status: active
+scope: project:ander-whatsapp
+created_at: 2026-10-08
 sensitivity: personal
-origin: trusted-user + agent-generated + observed-tool-results
-confidence: high-for-implemented-code / provisional-for-whatsapp-compatibility
+confidence: observed
+source:
+  type: user-request-and-local-audit
+  ref: original-ander-whatsapp-project-record-2026-10-08
+generated_by:
+  agent: codex
 last_verified: 2026-10-08
-supersedes: null
+legacy_id: project-ander-whatsapp
 ---
 # Ander WhatsApp (plugin privado e ponte local)
 

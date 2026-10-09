@@ -1,10 +1,19 @@
 ---
-id: evt-2026-10-08-ander-whatsapp-archive
-date: 2026-10-08
-scope: project/ander-whatsapp
-source: trusted-user + observed-tool-results
+id: EVT-2026-001008
+schema_version: 1
+type: event
+status: recorded
+scope: project:ander-whatsapp
+occurred_at: 2026-10-08
+actor: codex
 sensitivity: personal
-confidence: high-for-observed-tests
+confidence: observed
+source:
+  type: user-request-and-local-tests
+  ref: original-ander-whatsapp-archive-event-2026-10-08
+generated_by:
+  agent: codex
+legacy_id: evt-2026-10-08-ander-whatsapp-archive
 ---
 # Evento: integração de arquivamento multimídia e comando GPT local
 
