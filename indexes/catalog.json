@@ -54,6 +54,33 @@
     "sha256": "81a3be255bf18140ec4e16ac97c86cd884dd2ca72ec9efb9b44994af99c79cf8"
   },
   {
+    "id": "EVT-2026-001010",
+    "path": "events/2026/10/EVT-2026-001010-metrys-mobile-identidade-e-interface.md",
+    "type": "event",
+    "status": "recorded",
+    "scope": "project:ander-whatsapp/metrys-mobile",
+    "updated_at": "2026-10-08",
+    "sha256": "b0126f239ffe9606e33edb07852171a234f34156445ee597cf581a0d5b474b41"
+  },
+  {
+    "id": "EVT-2026-001011",
+    "path": "events/2026/10/EVT-2026-001011-metrys-mobile-retomada-041.md",
+    "type": "event",
+    "status": "recorded",
+    "scope": "project:ander-whatsapp/metrys-mobile",
+    "updated_at": "2026-10-09",
+    "sha256": "ee864f7912fdfe9199a9cac6d0f6afcebf9f480c29583ed4484723921e4f6227"
+  },
+  {
+    "id": "EVT-2026-001012",
+    "path": "events/2026/10/EVT-2026-001012-whatsapp-pausa-e-exclusao.md",
+    "type": "event",
+    "status": "recorded",
+    "scope": "project:ander-whatsapp",
+    "updated_at": "2026-10-09",
+    "sha256": "e1fcc304375835a80e38c0ac432aea2e0c65acb491086fa177001130c6ac98c0"
+  },
+  {
     "id": "KNOW-2026-000001",
     "path": "knowledge/profile/collaboration.md",
     "type": "semantic-memory",

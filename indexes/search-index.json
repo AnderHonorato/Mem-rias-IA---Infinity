@@ -42,6 +42,27 @@
     "scope": "project:ander-whatsapp/metrys-mobile"
   },
   {
+    "id": "EVT-2026-001010",
+    "path": "events/2026/10/EVT-2026-001010-metrys-mobile-identidade-e-interface.md",
+    "title": "Identidade, resposta real e evolução da interface Metrys",
+    "type": "event",
+    "scope": "project:ander-whatsapp/metrys-mobile"
+  },
+  {
+    "id": "EVT-2026-001011",
+    "path": "events/2026/10/EVT-2026-001011-metrys-mobile-retomada-041.md",
+    "title": "Retomada preservada, Metrys 0.4.1 e contexto verificável",
+    "type": "event",
+    "scope": "project:ander-whatsapp/metrys-mobile"
+  },
+  {
+    "id": "EVT-2026-001012",
+    "path": "events/2026/10/EVT-2026-001012-whatsapp-pausa-e-exclusao.md",
+    "title": "Pausa de atendimento após revogação do proprietário",
+    "type": "event",
+    "scope": "project:ander-whatsapp"
+  },
+  {
     "id": "KNOW-2026-000001",
     "path": "knowledge/profile/collaboration.md",
     "title": "Perfil de colaboração",
