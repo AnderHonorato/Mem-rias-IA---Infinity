@@ -11,3 +11,4 @@ Este índice é regenerado pelo script `sync_memory.py`. Todos os caminhos abaix
 | projetos | [2026-08.md](Manus/Memorias/projetos/2026-08.md) | 5219 bytes |
 | tarefas | [2026-08.md](Manus/Memorias/tarefas/2026-08.md) | 799 bytes |
 | tarefas | [2026-09.md](Manus/Memorias/tarefas/2026-09.md) | 2906 bytes |
+| tarefas | [2026-10.md](Manus/Memorias/tarefas/2026-10.md) | 2096 bytes |
