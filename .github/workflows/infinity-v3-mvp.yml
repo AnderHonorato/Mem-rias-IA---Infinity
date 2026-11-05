@@ -1,0 +1,33 @@
+name: Infinity V3 — Testes do núcleo experimental
+
+on:
+  pull_request:
+    paths:
+      - "infinity_v3_mvp/**"
+      - ".github/workflows/infinity-v3-mvp.yml"
+  push:
+    branches:
+      - "rebuild/infinity-v3-gpt61-sol"
+    paths:
+      - "infinity_v3_mvp/**"
+      - ".github/workflows/infinity-v3-mvp.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testes-memoria:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: infinity_v3_mvp
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Executar testes unitários
+        run: python -m unittest discover -s testes -v
