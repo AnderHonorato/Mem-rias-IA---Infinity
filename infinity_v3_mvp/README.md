@@ -1,3 +1,5 @@
+> **Etapa 5:** `pipeline_contextual.py` agora conecta busca seletiva de memórias ao gateway de modelos e preserva referências. Memórias locais são tratadas como sensíveis e nunca enviadas para a nuvem. Leia [PIPELINE_ETAPA_5.md](PIPELINE_ETAPA_5.md).
+
 > **Etapa 4 adicionada:** integração real mas opcional com OpenAI Responses, Claude Messages e Ollama local. Leia [INTEGRACOES_ETAPA_4.md](INTEGRACOES_ETAPA_4.md). Nenhuma chamada externa ocorre por padrão; APIs pagas não foram executadas em testes.
 
 # Infinity V3 — núcleo experimental (Etapa 3)
