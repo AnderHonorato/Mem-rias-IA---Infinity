@@ -1,3 +1,5 @@
+> **Etapa 4 adicionada:** integração real mas opcional com OpenAI Responses, Claude Messages e Ollama local. Leia [INTEGRACOES_ETAPA_4.md](INTEGRACOES_ETAPA_4.md). Nenhuma chamada externa ocorre por padrão; APIs pagas não foram executadas em testes.
+
 # Infinity V3 — núcleo experimental (Etapa 3)
 
 **Status:** implementação funcional de biblioteca e CLI local; **não pronta para produção nem integrada ao ChatGPT**. A fonte canônica oficial continua em `../knowledge/` (V2). A V3 **não faz commit nem espelha memórias automaticamente**.
