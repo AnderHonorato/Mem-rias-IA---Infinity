@@ -23,6 +23,10 @@ with MotorMemoria(Path.home() / ".local/share/infinity-v3/memorias.db") as memor
     print(memoria.buscar(usuario="perfil-01", escopos=["projeto:exemplo"], consulta="português"))
 ```
 
+## Orquestração local experimental
+
+`infinity_v3/orquestrador.py` executa funções Python registradas em ordem de dependências e requer pelo menos um crítico independente por tarefa. Reprovação bloqueia dependentes. **Ainda não instancia agentes LLM**, mas fornece uma base real e testada para integrá-los futuramente.
+
 ## O que este MVP comprova
 - SQLite transacional e índice FTS5 com atualizações por trigger.
 - Candidatos exigem aprovação, salvo consentimento explícito no registro.
