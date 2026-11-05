@@ -23,11 +23,17 @@ jobs:
       run:
         working-directory: infinity_v3_mvp
     steps:
-      - name: Baixar o código
+      - name: Baixar código
         uses: actions/checkout@v4
       - name: Preparar Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Executar testes unitários
+      - name: Instalar dependências da leitura V2
+        run: python -m pip install -r requirements.txt
+      - name: Testes unitários
         run: python -m unittest discover -s testes -v
+      - name: Verificar leitura da fonte canônica real sem expor conteúdo
+        run: python -m infinity_v3 --raiz .. --consulta "teste" --escopo global --metadados
+      - name: Compilação estática do pacote
+        run: python -m compileall -q infinity_v3
