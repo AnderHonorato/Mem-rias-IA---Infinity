@@ -15,7 +15,8 @@
 | `cache.py` | Cache LRU TTL em RAM, só com classificação explícita `publica` | Nunca armazenar dados de usuário no cache |
 | `orquestrador.py` | Dependências, funções-agentes e críticos independentes em execução local | Não instancia LLMs, nem executa ferramentas conectadas |
 | `catalogo_agentes.py` | Cadastro declarativo de 12 papéis de agentes e 6 tipos de revisão | Cadastro não executa IA |
-| `execucao_supervisionada.py` | Exige 2 revisores para tarefas classificadas como alto risco | Revisores ainda são callbacks locais; falta atestado de independência entre modelos |
+| `execucao_supervisionada.py` | Exige 2 revisores para tarefas classificadas como alto risco, valida IDs antes de executar | Revisores ainda são callbacks locais; falta atestado de independência entre modelos |
+| `orquestracao_paralela.py` | Executa em paralelo funções independentes com pool de 1 a 16 threads; espera dependências, bloqueia falhas e preserva a ordem do plano | Os callbacks devem ser thread-safe; não compartilhe conexão SQLite entre threads |
 | `ferramentas.py` | Allowlist, simulação, dupla permissão para ações destrutivas e confirmação de uso único | Não chama plugins do ChatGPT por conta própria |
 | `auditoria.py` | Registra metadados mínimos com cadeia HMAC sem armazenar conteúdo de tarefas | Necessita chave externa; não substitui log seguro de produção |
 | `__main__.py` | Busca canônica com comando Python | Sem interface web/API |
@@ -60,7 +61,7 @@ with MotorMemoria(Path.home() / '.local/share/infinity-v3/experimental.db') as m
 - Pesquisa local exige `usuario` e `escopos`, e a fachada impede acessar escopos não autorizados. A identidade deve vir de autenticação real em futura API. A fachada não é barreira contra código Python malicioso no mesmo processo.
 - Exclusão remove da tabela, eventos e índice local, mas **não promete apagamento forense** de WAL, SSD, backups ou cópias remotas. A V2 pública no Git é imutável no histórico: revisões e exclusões canônicas exigem outro fluxo.
 - TTL, medição de tempo e padrões heurísticos não são garantias de segurança ou desempenho universal.
-- Ferramentas ficam em simulação até habilitação explícita. Escritas exigem uma confirmação de uso único; chamadas externas são callbacks injetados pelo host.
+- Ferramentas ficam em simulação até habilitação explícita. Escritas exigem uma confirmação de uso único, consumida atomicamente antes da execução, inclusive em chamadas concorrentes; callbacks externos são injetados pelo host.
 - Auditoria HMAC não persiste prompts, entradas ou saídas. Não demonstra independência real de críticos nem cria modelos GPT/Claude/Gemini.
 - Testes contêm apenas informações sintéticas e não usam memórias particulares.
 
@@ -93,5 +94,7 @@ resultados = Supervisao(orquestrador).executar([
 ])
 assert resultados[0].estado == 'aprovada'
 ```
+
+Para tarefas independentes, use `OrquestradorParaleloLocal` (máximo 4 workers por padrão) no lugar de `OrquestradorLocal`, mantendo a mesma API. Ele **não inicia agentes de IA sozinho**. Restrições: callbacks precisam ser thread-safe; dados pessoais não devem ser enviados a modelos sem autorização, e ferramentas destrutivas permanecem sujeitas a política explícita.
 
 Consulte `../docs/PROMPT-MESTRE-INFINITY-V3-GPT61-SOL.md` para a especificação geral e `REVISAO_CRITICA_INICIAL.md` para os bloqueios conhecidos.

@@ -25,6 +25,11 @@ class Supervisao:
             raise ErroDePlano("Plano vazio")
         for item in tarefas:
             t = item.tarefa
+            # Antes de executar callbacks, rejeitar IDs que não cabem na auditoria.
+            if self.auditoria is not None:
+                for campo, valor in (("tarefa", t.id), ("agente", t.agente)):
+                    if not isinstance(valor, str) or not 1 <= len(valor) <= 100 or not all(c.isalnum() or c in "-_" for c in valor):
+                        raise ErroDePlano(f"{campo} inválido para auditoria")
             if t.agente not in AGENTES:
                 raise ErroDePlano(f"Papel de agente desconhecido: {t.agente}")
             if len(set(t.criticos)) != len(t.criticos):
