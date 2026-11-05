@@ -1,4 +1,4 @@
-# Infinity V3 — núcleo experimental (Etapa 2)
+# Infinity V3 — núcleo experimental (Etapa 3)
 
 **Status:** implementação funcional de biblioteca e CLI local; **não pronta para produção nem integrada ao ChatGPT**. A fonte canônica oficial continua em `../knowledge/` (V2). A V3 **não faz commit nem espelha memórias automaticamente**.
 
@@ -14,6 +14,10 @@
 | `roteador.py` | Seleção determinística por complexidade, modelos conectados, custo, latência e consentimento | Não chama nenhum modelo; preços configuráveis pelo operador |
 | `cache.py` | Cache LRU TTL em RAM, só com classificação explícita `publica` | Nunca armazenar dados de usuário no cache |
 | `orquestrador.py` | Dependências, funções-agentes e críticos independentes em execução local | Não instancia LLMs, nem executa ferramentas conectadas |
+| `catalogo_agentes.py` | Cadastro declarativo de 12 papéis de agentes e 6 tipos de revisão | Cadastro não executa IA |
+| `execucao_supervisionada.py` | Exige 2 revisores para tarefas classificadas como alto risco | Revisores ainda são callbacks locais; falta atestado de independência entre modelos |
+| `ferramentas.py` | Allowlist, simulação, dupla permissão para ações destrutivas e confirmação de uso único | Não chama plugins do ChatGPT por conta própria |
+| `auditoria.py` | Registra metadados mínimos com cadeia HMAC sem armazenar conteúdo de tarefas | Necessita chave externa; não substitui log seguro de produção |
 | `__main__.py` | Busca canônica com comando Python | Sem interface web/API |
 | `benchmark.py` | Microbenchmark de dados sintéticos | Não é medição da latência real do GPT |
 
@@ -56,6 +60,8 @@ with MotorMemoria(Path.home() / '.local/share/infinity-v3/experimental.db') as m
 - Pesquisa local exige `usuario` e `escopos`, e a fachada impede acessar escopos não autorizados. A identidade deve vir de autenticação real em futura API. A fachada não é barreira contra código Python malicioso no mesmo processo.
 - Exclusão remove da tabela, eventos e índice local, mas **não promete apagamento forense** de WAL, SSD, backups ou cópias remotas. A V2 pública no Git é imutável no histórico: revisões e exclusões canônicas exigem outro fluxo.
 - TTL, medição de tempo e padrões heurísticos não são garantias de segurança ou desempenho universal.
+- Ferramentas ficam em simulação até habilitação explícita. Escritas exigem uma confirmação de uso único; chamadas externas são callbacks injetados pelo host.
+- Auditoria HMAC não persiste prompts, entradas ou saídas. Não demonstra independência real de críticos nem cria modelos GPT/Claude/Gemini.
 - Testes contêm apenas informações sintéticas e não usam memórias particulares.
 
 ## Próximas fases pendentes
@@ -64,7 +70,28 @@ with MotorMemoria(Path.home() / '.local/share/infinity-v3/experimental.db') as m
 2. Criptografia em repouso, gerenciamento de chaves e propagação de exclusões para backups.
 3. Camada de acesso à fonte canônica respeitando o fluxo de revisão/PR, e políticas de sincronização com conflitos e proveniência.
 4. Recuperação híbrida de fato, com embeddings opt-in e ranking medido por conjunto de perguntas.
-5. Adapters reais de modelos/plug-ins com consentimento de custo, identidade e permissões por ação.
-6. Agentes LLM especializados, críticos independentes e dashboard web/mobile com métricas reais.
+5. Adaptadores reais de modelos/plugins com consentimento de custo, identidade e permissões por ação. As estruturas locais de catálogo, supervisão, auditoria e ferramenta já existem.
+6. Agentes LLM executores, críticos comprovadamente independentes e dashboard web/mobile com métricas reais.
+
+## Exemplo de supervisão de agentes locais (sem LLM e sem rede)
+
+```python
+from infinity_v3.orquestrador import OrquestradorLocal, Tarefa
+from infinity_v3.execucao_supervisionada import Supervisao, TarefaSupervisionada
+
+orquestrador = OrquestradorLocal(
+    agentes={'backend': lambda dados: {'artefato': dados['nome']}},
+    criticos={
+        'critico_corretude': lambda saida: (bool(saida.get('artefato')), 'ok'),
+        'critico_seguranca': lambda saida: (True, 'revisado'),
+    },
+)
+resultados = Supervisao(orquestrador).executar([
+    TarefaSupervisionada(Tarefa(id='tarefa-001', agente='backend',
+        entrada={'nome': 'teste-ficticio'},
+        criticos=('critico_corretude', 'critico_seguranca')), risco='alto')
+])
+assert resultados[0].estado == 'aprovada'
+```
 
 Consulte `../docs/PROMPT-MESTRE-INFINITY-V3-GPT61-SOL.md` para a especificação geral e `REVISAO_CRITICA_INICIAL.md` para os bloqueios conhecidos.
