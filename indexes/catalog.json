@@ -81,6 +81,15 @@
     "sha256": "e1fcc304375835a80e38c0ac432aea2e0c65acb491086fa177001130c6ac98c0"
   },
   {
+    "id": "EVT-2026-001013",
+    "path": "events/2026/11/EVT-2026-001013-lumen-floresta-viva-site.md",
+    "type": "event",
+    "status": "recorded",
+    "scope": "project:lumen-floresta-viva",
+    "updated_at": "2026-11-14",
+    "sha256": "cbcb27c789d0cd45e08171107d8b249fac69bab44066d76a00dc06fc43e15deb"
+  },
+  {
     "id": "KNOW-2026-000001",
     "path": "knowledge/profile/collaboration.md",
     "type": "semantic-memory",
@@ -160,6 +169,15 @@
     "scope": "project:ander-whatsapp",
     "updated_at": "2026-10-08",
     "sha256": "f1b2b732f27d48800d0af22b25081d36b3bcbf20324031c0035dd99bd7bebc12"
+  },
+  {
+    "id": "PROJ-2026-001009",
+    "path": "knowledge/projects/lumen-floresta-viva/README.md",
+    "type": "project",
+    "status": "active",
+    "scope": "project:lumen-floresta-viva",
+    "updated_at": "2026-11-14",
+    "sha256": "387deff1cd3d9b37849ae32d99639d7e6800a446880072860bbf18fc055fedc0"
   },
   {
     "id": "SUC-2026-000001",

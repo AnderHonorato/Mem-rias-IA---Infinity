@@ -63,6 +63,13 @@
     "scope": "project:ander-whatsapp"
   },
   {
+    "id": "EVT-2026-001013",
+    "path": "events/2026/11/EVT-2026-001013-lumen-floresta-viva-site.md",
+    "title": "Evento: página Lúmen — Floresta Viva",
+    "type": "event",
+    "scope": "project:lumen-floresta-viva"
+  },
+  {
     "id": "KNOW-2026-000001",
     "path": "knowledge/profile/collaboration.md",
     "title": "Perfil de colaboração",
@@ -124,6 +131,13 @@
     "title": "Ander WhatsApp (plugin privado e ponte local)",
     "type": "project",
     "scope": "project:ander-whatsapp"
+  },
+  {
+    "id": "PROJ-2026-001009",
+    "path": "knowledge/projects/lumen-floresta-viva/README.md",
+    "title": "Lúmen — Floresta Viva",
+    "type": "project",
+    "scope": "project:lumen-floresta-viva"
   },
   {
     "id": "SUC-2026-000001",

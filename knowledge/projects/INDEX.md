@@ -7,5 +7,6 @@
 | `only-nos/` | publicado / pendências externas | `GPT/Projetos/only-nos.md` |
 | `lumina-notes/` | em desenvolvimento | `GPT/Projetos/lumina-notes.md` |
 | `peonia/` | em desenvolvimento | `GPT/Projetos/peonia-identidade-visual.md` |
+| `lumen-floresta-viva/` | em desenvolvimento | `WebDev project wdp_3e8cb0f1d1918813c9a5eb4c` |
 
 Novos projetos só entram aqui quando identificados em fonte existente ou confirmados; não invente projetos.
